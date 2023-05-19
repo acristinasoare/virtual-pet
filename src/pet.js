@@ -75,6 +75,14 @@ Pet.prototype.haveBaby = function(name) {
   return this.children.push(childPet);
 }
 
+Pet.prototype.adoptChild = function (childPet) {
+  if(!this.isAlive) {
+    throw new Error('Your pet is no longer alive :(')
+  }
+  childPet = new Pet('Herby');
+  return this.children.push(childPet);
+}
+
 
 
 module.exports = Pet;
