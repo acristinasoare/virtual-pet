@@ -72,14 +72,14 @@ Pet.prototype.haveBaby = function(name) {
     throw new Error('Your pet is no longer alive :(')
   }
   const childPet = new Pet(name);
-  return this.children.push(childPet);
+  this.children.push(childPet);
 }
 
 Pet.prototype.adoptChild = function (childPet) {
   if(!this.isAlive) {
     throw new Error('Your pet is no longer alive :(')
   }
-  return this.children.push(childPet);
+  this.children.push(childPet);
 }
 
 
