@@ -1,4 +1,4 @@
-# Virtual Pet 
+# Virtual Pet :Dog face:
 
 A guided code project written as part of the CommandShift Bootcamp. The aim of the project was to create a JavaScript Virtual Pet that has the following features: 
 - the pet can be named
@@ -30,8 +30,11 @@ Run `npm test` to run Jest. All the tests should pass.
 ### Play Virtual Pet
 
 Open Node REPL in your terminal using `node` command. 
+
 Copy  `const Pet = require('../src/pet');` and return. 
+
 Create your pet by entering `const pet = new Pet('pet's name')`. 
+
 Once you've done that, you can start taking care of your pet by using the methods provided in the pet.js file located in the src folder. These methods include feeding, walking, having babies, and checking on your pet's status.
 
 
