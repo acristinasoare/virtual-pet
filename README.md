@@ -1,4 +1,4 @@
-# Virtual Pet :dogface:
+# Virtual Pet :dog_face:
 
 A guided code project written as part of the CommandShift Bootcamp. The aim of the project was to create a JavaScript Virtual Pet that has the following features: 
 - the pet can be named
