@@ -202,5 +202,27 @@ describe('isAlive', () => {
     pet.age = 15;
 
     expect(pet.isAlive).toBe(true);
-  })
-})
+  });
+});
+
+describe('haveBaby', () => {
+  it('creates a new Pet using the name passed in which will be added to the parent children property', () => {
+    const parentPet = new Pet('Fido');
+
+    parentPet.haveBaby('Herby');
+    parentPet.haveBaby('Sully')
+
+    expect(parentPet.children[0]).toBeInstanceOf(Pet);
+    expect(parentPet.children[0].name).toBe('Herby');
+    expect(parentPet.children[1].name).toBe('Sully');
+  });
+
+  it('throws an error if the baby is no longer alive', () => {
+    const parentPet = new Pet('Fido');
+
+    parentPet.hunger = 10;
+
+    expect(()=> parentPet.haveBaby()).toThrow('Your pet is no longer alive :(')
+  });
+
+});
