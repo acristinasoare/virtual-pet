@@ -206,7 +206,7 @@ describe('isAlive', () => {
 });
 
 describe('haveBaby', () => {
-  it('creates a new Pet using the name passed in which will be added to the parent children property', () => {
+  it('creates a new Pet using the name passed in which will be added to the children property of the parent', () => {
     const parentPet = new Pet('Fido');
 
     parentPet.haveBaby('Herby');
@@ -224,5 +224,23 @@ describe('haveBaby', () => {
 
     expect(()=> parentPet.haveBaby()).toThrow('Your pet is no longer alive :(')
   });
+});
 
+describe('adoptChild', () => {
+  it('adds the child instance to the parent pet children property', () => {
+    const parentPet = new Pet('Fido');
+    const childPet = new Pet('Herby');
+  
+    parentPet.adoptChild(childPet);
+  
+    expect(parentPet.children).toStrictEqual([childPet]);
+  });
+
+  it('throws an error if the baby is no longer alive', () => {
+    const parentPet = new Pet('Fido');
+
+    parentPet.hunger = 10;
+
+    expect(()=> parentPet.adoptChild()).toThrow('Your pet is no longer alive :(')
+  });
 });
